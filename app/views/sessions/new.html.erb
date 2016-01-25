@@ -1,0 +1,20 @@
+<h1>Login</h1>
+<%= form_for :user, url: '/login' do |f| %>
+
+  <% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+
+  <%= f.label :username  %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit :login  %>
+<% end %>
