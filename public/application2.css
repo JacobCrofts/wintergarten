@@ -2,19 +2,25 @@
   background-image: url("wintergarten.jpg");
 }*/
 
-body {
-  background: url("wintergarten3.jpg") no-repeat center center fixed;
+/*body {
+  background: url("wintergarten.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+  opacity: 0.2;
+}*/
+
 
 .ticket {
   vertical-align: center;
   text-align: center;
 }
-/*
+
 #background-image {
   width: 100%;
-}*/
+}
+
+.nav-wrapper {
+  opacity: 0.4;
+}

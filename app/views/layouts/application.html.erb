@@ -19,17 +19,20 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <nav>
-    <ul>
-     <% if session[:user_id] != nil %>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Profile', user_path(session[:user_id]) %></li>
-        <li><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
-      <% else %>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Login', login_path %></li>
-        <li><%= link_to 'Register', new_user_path %></li>
-      <% end %>
-    </ul>
+    <div class="nav-transparent nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if session[:user_id] != nil %>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Profile', user_path(session[:user_id]) %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
+        <% else %>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Login', login_path %></li>
+            <li><%= link_to 'Register', new_user_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </nav>
 
 <%= yield %>
