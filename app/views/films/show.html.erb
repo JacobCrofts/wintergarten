@@ -1,13 +1,20 @@
-<h1><%= @film.title %></h1>
+<h1><%= @film.title %> <span style="font-size: 0.5em;">(3.8 out of 4 reels)</span></h1>
 <div class="film-data">
 	<p><strong>Year: </strong><%= @film.year %></p>
 	<p><strong>Directed by:</strong> <%= @film.director %></p>
 	<p><strong>Runtime:</strong> <%= @film.runtime %></p>
 	<p><strong>Description:</strong> <%= @film.description %></p>
 </div>
+
 <div class="reviews-container" style="border: 2px solid #eeeeee;">
-	<p>Reviews</p>
+	<h2>Summary</h2>
+	<div class="review-summary">
+		<p>Rating: 3.8 out of 4 reels</p>
+		<span><%= @film.reviews.count %> reviews</span>
+		<p><%= link_to 'films', films_ %></p>
+	</div>
 	<div class="review-container" style="background-color: #eeeeee;">
+		<h3>Reviews</h3>
 		<%= render @film.reviews %>
 	</div>
 </div>
