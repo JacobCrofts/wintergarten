@@ -23,6 +23,7 @@ while user_counter < 5
     User.all[user_counter].reviews.create(film_id: film_counter + 1, title: "my review", content: "i think this was a great movie")
     User.all[user_counter].reviews[film_counter].comments.create(content: "This is a review comment!")
     User.all[user_counter].comments.create(content: "This is a film comment!", commentable_type: "Film", commentable_id: film_counter + 1)
+    User.all[user_counter].ratings.create(rateable_id: film_counter + 1, rateable_type: "Review", value: rand(1..4))
     film_counter += 1
   end
   user_counter += 1
