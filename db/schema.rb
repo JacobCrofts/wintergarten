@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160125222430) do
     t.string   "title"
     t.string   "runtime"
     t.string   "genre"
+    t.string   "image"
     t.integer  "year"
     t.string   "director"
     t.text     "description"
