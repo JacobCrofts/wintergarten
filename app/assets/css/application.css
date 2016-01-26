@@ -1,0 +1,18 @@
+#about {
+  background-color: #fff7e5;
+  color: black;
+}
+
+html {
+  background-color: #fff7e5;
+}
+
+.carousel-inner > .item > img {
+    margin: auto;
+    height: 400px;
+    width: 300px;
+}
+
+.page-scroll {
+  margin-top: 0;
+}
