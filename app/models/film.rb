@@ -20,7 +20,11 @@ class Film < ActiveRecord::Base
 
 
   def average_rating
-    self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+    if self.ratings.length > 0
+      self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+    else
+      "unrated"
+    end
   end
 
 
