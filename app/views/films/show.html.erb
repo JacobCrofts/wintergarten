@@ -1,4 +1,8 @@
-<h1><%= @film.title %> <span style="font-size: 0.5em;">(3.8 / 4 reels and <%= @film.reviews.count %> reviews)</span></h1>
+<h1><%= @film.title %>
+		<span style="font-size: 0.5em;">(<%= @film.average_rating %> / 4 reels and
+		<%= @film.reviews.count %> reviews)</span>
+</h1>
+
 <div class="film-data">
 	<p><strong>Year: </strong><%= @film.year %></p>
 	<p><strong>Directed by:</strong> <%= @film.director %></p>
@@ -9,9 +13,25 @@
 <div class="reviews-container" style="border: 2px solid #eeeeee;">
 	<h2>Summary</h2>
 	<div class="review-summary">
-	  <p classname="rating"><%= @film.average_rating %></p>
-		<p><%= @film.reviews.count %> reviews</p>
+	<!--
+	====== Display film average rating and review count ================
+	 -->
+		  <p classname="rating"><%= @film.average_rating %></p>
+			<p><%= @film.reviews.count %> reviews</p>
+	<!--
+	====== Display review form if user is signed in ====================
+	====== Else, invite user to sign in or sign up to do so ============
+	 -->
+		<% if session[:user_id] %>
+			<%= render 'reviews/form' %>
+		<% else %>
+			<p>Want to write a review?
+				 <%= link_to 'Sign in', login_path %> or
+				 <%= link_to 'Sign up', new_user_path %>!
+			</p>
+		<% end %>
 	</div>
+
 	<div class="review-container" style="background-color: #eeeeee;">
 		<h3>Reviews</h3>
 		<%= render @film.reviews %>
@@ -20,4 +40,3 @@
 	  <% end %>
 	</div>
 </div>
-		<%= render 'reviews/form' %>
