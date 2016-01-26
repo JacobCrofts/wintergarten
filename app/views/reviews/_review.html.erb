@@ -1,0 +1,8 @@
+<% if review.id %>
+	<div class="review" style="border: 1px solid #444;">
+		<p><%= review.title %></p>
+		<p><%= review.average_rating %></p>
+		<p><%= review.content %></p>
+		<p> - <%= review.reviewer.username %> on <%= review.created_at.strftime('%d %b. %Y') %></p>
+	</div>
+<% end %>

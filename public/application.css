@@ -1,0 +1,20 @@
+/*html {
+  background-image: url("wintergarten.jpg");
+}*/
+
+body {
+  background: url("wintergarten3.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.ticket {
+  vertical-align: center;
+  text-align: center;
+}
+/*
+#background-image {
+  width: 100%;
+}*/
