@@ -1,18 +1,5 @@
-#about {
-  background-color: #fff7e5;
-  color: black;
-}
-
-html {
-  background-color: #fff7e5;
-}
-
-.carousel-inner > .item > img {
-    margin: auto;
-    height: 400px;
-    width: 300px;
-}
-
-.page-scroll {
-  margin-top: 0;
-}
+//= require 'bootstrap.min'
+//= require 'bootstrap'
+//= require 'grayscale'
+//= require 'materialize.min'
+//= require 'custom'

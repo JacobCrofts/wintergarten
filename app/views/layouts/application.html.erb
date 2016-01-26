@@ -12,19 +12,10 @@
     <title>Wintergarten</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../assets/css/grayscale.css" rel="stylesheet">
-
-    <!-- Materialize CSS -->
-    <link href="../assets/css/materialize.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../assets/css/application.css" rel="stylesheet">
+    <%= stylesheet_link_tag "application" %>
 
     <!-- Custom Fonts -->
-    <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
@@ -86,6 +77,18 @@
     </nav>
 
 <%= yield %>
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; Your Website 2014</p>
+    </div>
+</footer>
+
+<%= javascript_include_tag "application" %>
+
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
 </body>
 </html>

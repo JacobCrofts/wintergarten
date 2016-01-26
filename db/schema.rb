@@ -1,4 +1,3 @@
-
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160125222430) do
     t.string   "title"
     t.string   "runtime"
     t.string   "genre"
+    t.string   "image"
     t.integer  "year"
     t.string   "director"
     t.text     "description"
