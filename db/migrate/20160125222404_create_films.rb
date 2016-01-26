@@ -4,6 +4,7 @@ class CreateFilms < ActiveRecord::Migration
       t.string :title
       t.string :runtime
       t.string :genre
+      t.string :image
       t.integer :year
       t.string :director
       t.text :description
