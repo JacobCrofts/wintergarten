@@ -9,7 +9,7 @@
 <div class="reviews-container" style="border: 2px solid #eeeeee;">
 	<h2>Summary</h2>
 	<div class="review-summary">
-		<p>Rating: 3.8 out of 4 reels</p>
+	  <p classname="rating"><%= film.average_score %></p>
 		<span><%= @film.reviews.count %> reviews</span>
 		<p><%= link_to 'films', films_ %></p>
 	</div>
