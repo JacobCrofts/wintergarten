@@ -1,7 +1,23 @@
-<h1><%= @film.title %></h1>
+<h1><%= @film.title %> <span style="font-size: 0.5em;">(3.8 / 4 reels and <%= @film.reviews.count %> reviews)</span></h1>
+<div class="film-data">
+	<p><strong>Year: </strong><%= @film.year %></p>
+	<p><strong>Directed by:</strong> <%= @film.director %></p>
+	<p><strong>Runtime:</strong> <%= @film.runtime %></p>
+	<p><strong>Description:</strong> <%= @film.description %></p>
+</div>
 
-  <h4 classname="rating"><%= @film.average_score %></h4>
-  <p><%= render @film.reviews %></p>
-  <% @film.comments.each do |comment|%>
-    <p><%= comment.content %></p>
-  <% end %>
+<div class="reviews-container" style="border: 2px solid #eeeeee;">
+	<h2>Summary</h2>
+	<div class="review-summary">
+	  <p classname="rating"><%= @film.average_rating %></p>
+		<p><%= @film.reviews.count %> reviews</p>
+	</div>
+	<div class="review-container" style="background-color: #eeeeee;">
+		<h3>Reviews</h3>
+		<%= render @film.reviews %>
+	  <% @film.comments.each do |comment|%>
+	    <p><%= comment.content %></p>
+	  <% end %>
+	</div>
+</div>
+		<%= render 'reviews/form' %>
