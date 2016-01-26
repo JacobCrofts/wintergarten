@@ -1,3 +1,6 @@
 <h1><%= film.title %></h1>
 
-<p><%= render @film.reviews %></p>
+  <% @films.ratings.each do |film| %>
+    <h4><%= film.average_score %></h4>
+    <p><%= render @film.reviews %></p>
+  <% end %>
