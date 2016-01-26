@@ -1,3 +1,13 @@
-<h1><%= film.title %></h1>
-
-<p><%= render @film.reviews %></p>
+<h1><%= @film.title %></h1>
+<div class="film-data">
+	<p><strong>Year: </strong><%= @film.year %></p>
+	<p><strong>Directed by:</strong> <%= @film.director %></p>
+	<p><strong>Runtime:</strong> <%= @film.runtime %></p>
+	<p><strong>Description:</strong> <%= @film.description %></p>
+</div>
+<div class="reviews-container" style="border: 2px solid #eeeeee;">
+	<p>Reviews</p>
+	<div class="review-container" style="background-color: #eeeeee;">
+		<%= render @film.reviews %>
+	</div>
+</div>
