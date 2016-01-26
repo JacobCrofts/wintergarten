@@ -1,4 +1,7 @@
-<h1><%= film.title %></h1>
+<h1><%= @film.title %></h1>
 
-  <h4 classname="rating"><%= film.average_score %></h4>
-    <p><%= render @film.reviews %></p>
+  <h4 classname="rating"><%= @film.average_score %></h4>
+  <p><%= render @film.reviews %></p>
+  <% @film.comments.each do |comment|%>
+    <p><%= comment.content %></p>
+  <% end %>
