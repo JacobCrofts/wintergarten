@@ -18,9 +18,12 @@ class Film < ActiveRecord::Base
   has_many :reviews
   has_many :ratings, as: :rateable
 
-
   def average_rating
-    self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+    if self.ratings.length > 0
+      self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+    else
+      "unrated"
+    end
   end
 
 

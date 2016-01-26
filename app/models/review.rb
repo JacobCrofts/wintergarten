@@ -17,8 +17,17 @@ class Review < ActiveRecord::Base
   belongs_to :film
   belongs_to :reviewer, class_name: "User"
 
+  validates :film_id, presence: true
+  validates :reviewer_id, presence: true
+  validates :title, presence: true
+  validates :content, presence: true
+
   def average_rating
-    self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+    if self.ratings.length > 0
+      self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+    else
+      "unrated"
+    end
   end
 
 end
