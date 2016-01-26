@@ -3,14 +3,11 @@
 <% @films.each do |film| %>
 	<div class="film-container">
 		<div class="film-data">
-			<p><%= film.title %></p>
+			<h2><%= link_to film.title, film_path(film) %> <span style="font-size: 0.5em;">(3.8 / 4 reels and <%= film.reviews.count %> reviews)</span></h2>
 			<p><strong>Year: </strong><%= film.year %></p>
 			<p><strong>Directed by:</strong> <%= film.director %></p>
 			<p><strong>Runtime:</strong> <%= film.runtime %></p>
 			<p><strong>Description:</strong> <%= film.description %></p>
-		</div>
-		<div class="film-nav">
-			<p><%= link_to 'Show', film_path(film) %></p>
 		</div>
 	</div>
 <% end %>
