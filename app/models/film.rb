@@ -26,5 +26,8 @@ class Film < ActiveRecord::Base
     end
   end
 
+  def self.top_five
+    self.all.to_a.sort_by {|film| film.average_rating}.reverse[0..4]
+  end
 
 end

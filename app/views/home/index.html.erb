@@ -40,21 +40,15 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag "martian.jpg" %>
-    </div>
+      <div class="item active">
+        <%= image_tag @top_films.first.image %>
+      </div>
 
-    <div class="item">
-      <%= image_tag "star_wars.jpg" %>
-    </div>
-
-    <div class="item">
-      <%= image_tag "revenant.jpg" %>
-    </div>
-
-    <div class="item">
-      <%= image_tag "room.jpg" %>
-    </div>
+    <% @top_films[1..-1].each do |top_film| %>
+      <div class="item">
+        <%= image_tag top_film.image %>
+      </div>
+    <% end %>
   </div>
 
   <!-- Left and right controls -->
