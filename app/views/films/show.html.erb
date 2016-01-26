@@ -16,5 +16,9 @@
 	<div class="review-container" style="background-color: #eeeeee;">
 		<h3>Reviews</h3>
 		<%= render @film.reviews %>
+	  <% @film.comments.each do |comment|%>
+	    <p><%= comment.content %></p>
+	  <% end %>
 	</div>
 </div>
+
