@@ -16,4 +16,9 @@ class Review < ActiveRecord::Base
   has_many :ratings, as: :rateable
   belongs_to :film
   belongs_to :reviewer, class_name: "User"
+
+  def average_rating
+    self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
+  end
+
 end
