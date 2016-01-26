@@ -1,0 +1,16 @@
+<h1>Films</h1>
+
+<% @films.each do |film| %>
+	<div class="film-container">
+		<div class="film-data">
+			<p><%= film.title %></p>
+			<p><%= film.year %></p>
+			<p><%= film.director %></p>
+			<p><%= film.runtime %></p>
+			<p><%= film.description %></p>
+		</div>
+		<div class="film-nav">
+			<p><%= link_to: 'Show', film_path(film) %></p>
+		</div>
+	</div>
+<% end %>

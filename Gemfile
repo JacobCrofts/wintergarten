@@ -16,7 +16,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'better_errors'
 
-gem 'rspec-rails', '~>3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -39,6 +38,10 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~>3.0'
+  gem 'capybara'
+  gem 'pry'
+  gem 'factory_girl_rails'
 end
 
 group :development do

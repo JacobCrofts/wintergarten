@@ -1,3 +1,4 @@
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -25,6 +26,9 @@ ActiveRecord::Schema.define(version: 20160125222430) do
     t.datetime "updated_at",       null: false
   end
 
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commenter_id"], name: "index_comments_on_commenter_id", using: :btree
+
   create_table "films", force: :cascade do |t|
     t.string   "title"
     t.string   "runtime"
@@ -45,13 +49,20 @@ ActiveRecord::Schema.define(version: 20160125222430) do
     t.datetime "updated_at",    null: false
   end
 
+  add_index "ratings", ["rateable_id"], name: "index_ratings_on_rateable_id", using: :btree
+  add_index "ratings", ["rater_id"], name: "index_ratings_on_rater_id", using: :btree
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "film_id"
     t.integer  "reviewer_id"
+    t.string   "title"
     t.text     "content"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "reviews", ["film_id"], name: "index_reviews_on_film_id", using: :btree
+  add_index "reviews", ["reviewer_id"], name: "index_reviews_on_reviewer_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
