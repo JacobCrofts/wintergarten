@@ -30,4 +30,8 @@ class Review < ActiveRecord::Base
     end
   end
 
+  def rounded_stars
+    (self.average_rating * 2).to_i / 2.0
+  end
+
 end
