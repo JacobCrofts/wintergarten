@@ -96,8 +96,20 @@ nav {
   border-radius: 10px;
 }
 
+.movie-title {
+  color: #009999;
+}
+
+.sub-header {
+  font-size: 0.5em;
+}
+
 .form-label {
  color: #009999;
+}
+
+.description {
+  color: #ff9900;
 }
 
 .small-uppercase {

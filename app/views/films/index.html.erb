@@ -1,11 +1,11 @@
-<h1>Films</h1>
+<h1 class="page-header">Films</h1>
 
 <% @films.each do |film| %>
 	<div class="film-container">
 		<div class="film-data">
-			<h2 class="movie-title"><%= link_to film.title, film_path(film) %> <span style="font-size: 0.5em;">(<%= film.average_rating %>, <%= film.ratings.count %> ratings)</span></h2>
-      <p><strong>Directed by <%= film.director %>, <%= film.year %>. <%= film.runtime %></strong></p>
-      <p><strong>Synopsis:</strong> <%= film.description %></p>
+			<h2 class="movie-title"><%= link_to film.title, film_path(film) %> <span class="sub-header">(<%= film.average_rating %>, <%= film.ratings.count %> ratings)</h2>
+      <p class="description">Directed by <%= film.director %>, <%= film.year %>. <%= film.runtime %></p>
+      <p class="description">Synopsis: <%= film.description %></p>
 		</div>
 	</div>
 <% end %>
