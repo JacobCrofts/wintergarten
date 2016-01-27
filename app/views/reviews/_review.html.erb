@@ -5,5 +5,10 @@
 		<p><%= review.content %></p>
 		<p> - <%= review.reviewer.username %> on <%= review.created_at.strftime('%d %b. %Y') %></p>
 	</div>
+  <% review.comments.each do |comment| %>
+    <p><%= comment.content %></p>
+    <p><%= comment.commenter.username %></p>
+  <% end %>
+  <h3>Leave a comment on this review</h3>
   <%= render 'comments/review_form', film: review.film, review: review %>
 <% end %>
