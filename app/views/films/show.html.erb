@@ -2,7 +2,7 @@
 		<span style="font-size: 0.5em;">(<%= @film.average_rating %> stars, <%= @film.ratings.count %> ratings)</span>
 </h1>
 
-<% if @film.already_rated(session[:user_id]) %>
+<% if session[:user_id] && @film.already_rated(session[:user_id]) %>
 	<div class="film-rating">
 		<% @film.current_user_rating(session[:user_id]).times do %>
 			<span class="star-static">★</span>
@@ -12,7 +12,7 @@
 		<% end %>
 	</div>
 	<br>
-<% else %>
+<% elsif session[:user_id] %>
 	<div class="film-rating">
 		<span class="film-star" id="film-rating-1">☆</span><span class="film-star" id="film-rating-2">☆</span><span class="film-star" id="film-rating-3">☆</span><span class="film-star" id="film-rating-4">☆</span>
 	</div>

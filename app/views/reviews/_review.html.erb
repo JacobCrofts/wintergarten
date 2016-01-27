@@ -2,7 +2,7 @@
 	<div class="review" style="border: 1px solid #444;">
 		<p><%= review.title %></p>
 
-    <% if review.already_rated(session[:user_id]) %>
+    <% if session[:user_id] && review.already_rated(session[:user_id]) %>
       <div class="rated-review">
         <% review.current_user_rating(session[:user_id]).times do %>
           <span class="star-static">★</span>
@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <br>
-    <% else %>
+    <% elsif session[:user_id] %>
       <div id="review-stars-<%=review.id%>" class="review-rating">
         <span class="review-rating-1">☆</span><span class="review-rating-2">☆</span><span class="review-rating-3">☆</span><span class="review-rating-4">☆</span>
       </div>
