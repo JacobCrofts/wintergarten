@@ -1,3 +1,4 @@
+<h6>Comment on Film</h6>
 <%=form_for [film, @comment || Comment.new] do |f| %>
   <%= f.text_area :content %>
   <%= f.submit "Create" %>
