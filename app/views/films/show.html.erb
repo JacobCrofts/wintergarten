@@ -1,11 +1,23 @@
 <h1 class="movie-title"><%= @film.title %>
-		<span style="font-size: 0.5em;">(<%= @film.average_rating %> stars, <%= @film.reviews.count %> reviews)</span>
+		<span style="font-size: 0.5em;">(<%= @film.average_rating %> stars, <%= @film.ratings.count %> ratings)</span>
 </h1>
 
-<div class="film-rating">
-	<span class="star" id="film-rating-1">☆</span><span class="star" id="film-rating-2">☆</span><span class="star" id="film-rating-3">☆</span><span class="star" id="film-rating-4">☆</span>
-</div>
-<br>
+<% if @film.already_rated(session[:user_id]) %>
+	<div class="film-rating">
+		<% @film.current_user_rating(session[:user_id]).times do %>
+			<span class="star-static">★</span>
+		<% end %>
+		<% (4 - @film.current_user_rating(session[:user_id])).times do %>
+			<span class="star-static">☆</span>
+		<% end %>
+	</div>
+	<br>
+<% else %>
+	<div class="film-rating">
+		<span class="star" id="film-rating-1">☆</span><span class="star" id="film-rating-2">☆</span><span class="star" id="film-rating-3">☆</span><span class="star" id="film-rating-4">☆</span>
+	</div>
+	<br>
+<% end %>
 
 <div class="film-data">
 	<p>Directed by <%= @film.director %>, <%= @film.year %>. <%= @film.runtime %></></p>

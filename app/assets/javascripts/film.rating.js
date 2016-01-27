@@ -14,7 +14,7 @@ $(".star").on("click", function() {
     highlightStars(parseInt(response.value));
   });
   request.fail(function (error) {
-    var xyz  = error;
+    console.log(error);
   })
 })
 
