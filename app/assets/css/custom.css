@@ -70,9 +70,6 @@ nav {
   color: #542733;
 }
 
-#ffcc00
-
-
 .film-data {
   margin-top: 20px;
 }
@@ -97,6 +94,24 @@ nav {
   vertical-align: center;
   text-align: center;
   border-radius: 10px;
+}
+
+.form-label {
+ color: #009999;
+}
+
+.small-uppercase {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+input {
+  color: #009999;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .card-panel {

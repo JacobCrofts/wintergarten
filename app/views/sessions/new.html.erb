@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1 class="page-header">Login</h1>
 <%= form_for :user, url: '/login' do |f| %>
 
   <% if @errors %>
@@ -10,10 +10,11 @@
   <% end %>
 
 
-  <%= f.label :username  %>
+  <span class="form-label small-uppercase"><%= f.label :username  %></span>
   <%= f.text_field :username %>
   <br>
-  <%= f.label :password %>
+  <span class="form-label small-uppercase">
+  <%= f.label :password %></span>
   <%= f.password_field :password %>
   <br>
   <%= f.submit :login  %>
