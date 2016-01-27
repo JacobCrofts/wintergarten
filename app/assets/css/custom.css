@@ -63,3 +63,9 @@ nav {
 .intro {
   background-color: black;
 }
+
+.review-list {
+  margin: top 25%;
+  vertical-align: center;
+  text-align: center;
+}
