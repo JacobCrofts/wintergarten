@@ -1,0 +1,4 @@
+<%=form_for [film, @comment || Comment.new] do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Create" %>
+<% end %>
