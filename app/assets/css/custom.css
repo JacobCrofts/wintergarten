@@ -87,7 +87,6 @@ nav {
   margin-top: 10%;
   vertical-align: center;
   text-align: center;
-  width: 500px;
   border-radius: 10px;
   padding: auto;
 }
@@ -100,13 +99,12 @@ nav {
   border-radius: 10px;
 }
 
-#film-block {
+#films-block {
   display: inline-block;
   margin-top: 10%;
   vertical-align: center;
   text-align: center;
   border-radius: 10px;
-  background-color: #542733;
 }
 
 .movie-title {
@@ -148,7 +146,6 @@ input {
 
 .red {
   background-color: #542733;
-  display: inline-block;
 }
 
 p {
