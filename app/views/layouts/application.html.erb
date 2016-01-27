@@ -56,7 +56,7 @@
                       <%= link_to 'Profile', user_path(session[:user_id]) %>
                     </li>
                     <li class="page-scroll">
-                      <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
+                      <%= link_to 'Logout', logout_path, method: :get %>
                     </li>
                   <% else %>
                     <li class="page-scroll">
@@ -80,9 +80,7 @@
 
 <!-- Footer -->
 <footer>
-    <div class="container text-center">
-        <p>Copyright &copy; Your Website 2014</p>
-    </div>
+
 </footer>
 
 <%= javascript_include_tag "application" %>

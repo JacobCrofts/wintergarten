@@ -12,8 +12,20 @@ footer {
   color: black;
 }
 
+.beige-background {
+  background-color: #fff7e5;
+}
+
 html {
   background-color: #fff7e5;
+}
+
+body {
+  background-color: #fff7e5;
+}
+
+nav {
+  background-color: #906078;
 }
 
 .carousel-inner > .item > img {
@@ -46,4 +58,14 @@ html {
 
 .film-data {
   margin-top: 20px;
+}
+
+.intro {
+  background-color: black;
+}
+
+.review-list {
+  margin: top 25%;
+  vertical-align: center;
+  text-align: center;
 }
