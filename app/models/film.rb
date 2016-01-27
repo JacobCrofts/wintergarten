@@ -43,4 +43,19 @@ class Film < ActiveRecord::Base
     self.all.to_a.sort_by {|film| film.average_rating}.reverse[0..4]
   end
 
+  def already_rated(user_id)
+    user = User.find(user_id)
+    rating_users = []
+    self.ratings.to_a.each do |rating|
+      rating_users << rating.rater
+    end
+    rating_users.include?(user)
+  end
+
+  def current_user_rating(user_id)
+    user = User.find(user_id)
+    rating = user.ratings.where(rateable_id: self.id, rateable_type: "Film")
+    rating.first.value
+  end
+
 end

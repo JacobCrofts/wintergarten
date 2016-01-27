@@ -22,12 +22,19 @@ class Review < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
 
+
   def average_rating
-    if self.ratings.length > 0
-      self.ratings.reduce(0){|sum, rating| sum + rating.value } / self.ratings.length.to_f
-    else
-      "unrated"
+    ratings = get_valid_ratings
+    if ratings.length > 0
+      ratings.reduce(0){|sum, rating| sum + rating.value } / ratings.length.to_f
     end
+  end
+
+  ###
+  # Get those ratings that are integers. Disregard nil ratings
+  ###
+  def get_valid_ratings
+    self.ratings.select{ |rating| rating.value.is_a? Numeric }
   end
 
   def rounded_stars

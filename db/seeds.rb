@@ -1,5 +1,5 @@
-User.create(username: "bob", password: "bob", email: "bob@bob.com")
-User.create(username: "penny", password: "penny", email: "penny@penny.com")
+bob = User.create(username: "bob", password: "bob", email: "bob@bob.com")
+penny = User.create(username: "penny", password: "penny", email: "penny@penny.com")
 User.create(username: "sarah", password: "sarah", email: "sarah@sarah.com")
 User.create(username: "james", password: "james", email: "james@james.com")
 User.create(username: "melissa", password: "melissa", email: "melissa@melissa.com")
@@ -15,17 +15,40 @@ Film.create(title: "Movie 3", runtime: "1:32", genre: "comedy", image: "http://m
 Film.create(title: "Movie 4", runtime: "1:33", genre: "horror", image: "http://www.almanac.com/sites/default/files/images/eggplant.jpg", year: 2006, director: "Herpson Derpington", description: "average horror movie")
 Film.create(title: "Movie 5", runtime: "1:34", genre: "comedy", image: "http://media.mercola.com/assets/images/food-facts/eggplant-fb.jpg", year: 2007, director: "Derpson Herpton", description: "pretty good comedy")
 
+### Create a user with over 50 rated reviews and an avg rating of those reviews >= 3.5
+60.times do |t|
+  bob.reviews.create(film_id: rand(1..4),
+                     title: "my review",
+                     content: "i think this was a great movie")
+  penny.ratings.create(rateable_id: t, rateable_type: "Review", value: 4)
+end
+
+### Create a user with over 50 rated reviews and an avg rating of those reviews < 3.5
+60.times do |t|
+  penny.reviews.create(film_id: rand(1..4),
+                       title: "my review",
+                       content: "i think this was a great movie")
+  bob.ratings.create(rateable_id: t+60, rateable_type: "Review", value: rand(1..3))
+end
+
 user_counter = 0
 while user_counter < 5
   film_counter = 0
   while film_counter < 5
-    User.all[user_counter].ratings.create(rateable_id: film_counter + 1, rateable_type: "Film", value: rand(1..4))
-    User.all[user_counter].reviews.create(film_id: film_counter + 1, title: "my review", content: "i think this was a great movie")
+    User.all[user_counter].ratings.create(rateable_id: film_counter + 1,
+                                          rateable_type: "Film",
+                                          value: rand(1..4))
+    User.all[user_counter].reviews.create(film_id: film_counter + 1,
+                                          title: "my review",
+                                          content: "i think this was a great movie")
     User.all[user_counter].reviews[film_counter].comments.create(content: "This is a review comment!")
-    User.all[user_counter].comments.create(content: "This is a film comment!", commentable_type: "Film", commentable_id: film_counter + 1)
-    User.all[user_counter].ratings.create(rateable_id: film_counter + 1, rateable_type: "Review", value: rand(1..4))
+    User.all[user_counter].comments.create(content: "This is a film comment!",
+                                          commentable_type: "Film",
+                                          commentable_id: film_counter + 1)
+    User.all[user_counter].ratings.create(rateable_id: film_counter + 1,
+                                          rateable_type: "Review",
+                                          value: rand(1..4))
     film_counter += 1
   end
   user_counter += 1
 end
-
