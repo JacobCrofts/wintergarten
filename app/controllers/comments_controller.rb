@@ -1,28 +1,34 @@
 class CommentsController < ApplicationController
 
-
   def create
     # user
     user = User.find_by(id: session[:user_id])
     # commentable
-    if params[:film_id]
-      commentable = Film.find(params[:film_id])
+      puts "************************************************************"
+
+    film = Film.find(params[:film_id])
+    if params[:review_id]
+      review = Review.find(params[:review_id])
+      @comment = review.comments.build(comment_params.merge(commenter: user))
+      puts "************************************************************"
+      puts @comment
     else
-      commentable = Review.find(params[:review_id])
+      @comment = film.comments.build(comment_params.merge(commenter: user))
+      puts "************************************************************"
+      puts @comment
     end
 
-    @comment = commentable.comments.build(comment_params.merge(commenter: user))
     if @comment.save
-      redirect_to commentable
+      puts "************************************************************"
+      puts @comment
+      redirect_to film_path
     else
-      render commentable
+      redirect_to film_path
     end
   end
 
   def comment_params
     params.require(:comment).permit(:content)
   end
-
-
 
 end

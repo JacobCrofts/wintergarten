@@ -24,7 +24,7 @@
 	 -->
 		<% if session[:user_id] %>
 			<%= render 'reviews/form' %>
-      <%= render 'comments/form', commentable: @film %>
+      <%= render 'comments/film_form', film: @film %>
     <% else %>
       <p>Want to write a review?
          <%= link_to 'Sign in', login_path %> or
