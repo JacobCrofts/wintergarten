@@ -21,9 +21,10 @@ class CommentsController < ApplicationController
     if @comment.save
       puts "************************************************************"
       puts @comment
-      redirect_to film_path
+      redirect_to film_path(film)
     else
-      redirect_to film_path
+      @film = film
+      render "films/show"
     end
   end
 
