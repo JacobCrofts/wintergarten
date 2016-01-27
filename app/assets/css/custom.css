@@ -18,6 +18,7 @@ footer {
 
 html {
   background-color: #fff7e5;
+  opacity: 0.6;
 }
 
 body {
@@ -56,6 +57,22 @@ nav {
    position: absolute;
 }*/
 
+.navbar-custom a {
+  color: #009999;
+}
+
+.white-text a {
+  color: white;
+  font-size: 14px;
+}
+
+.white-text a:hover {
+  color: #542733;
+}
+
+#ffcc00
+
+
 .film-data {
   margin-top: 20px;
 }
@@ -64,8 +81,52 @@ nav {
   background-color: black;
 }
 
-.review-list {
-  margin: top 25%;
+#review-list {
+  display: inline-block;
+  margin-top: 10%;
   vertical-align: center;
   text-align: center;
+  width: 500px;
+  border-radius: 10px;
+  padding: auto;
+}
+
+#welcome-block {
+  display: inline-block;
+  margin-top: 10%;
+  vertical-align: center;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card-panel {
+  display: inline-block;
+  background-color: #ff9900;
+}
+
+p {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+a {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+.link {
+  font-size: 2em;
+}
+
+.page-header {
+  font-size: 2em;
+  margin-top: 10%;
+  color: #542733;
 }
