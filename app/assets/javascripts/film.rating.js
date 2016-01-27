@@ -1,4 +1,4 @@
-$(".star").on("click", function() {
+$(".film-star").on("click", function() {
   var value = $(this).attr("id").replace("film-rating-", "");
   var filmId = window.location.pathname.replace("/films/", "");
   var filmData = {rateable_id: filmId, rateable_type: "Film", value: value}
@@ -6,12 +6,12 @@ $(".star").on("click", function() {
     type: 'POST',
     url: '/films/' + filmId + '/ratings',
     data: {
-          film_data: filmData,
+          data: filmData,
           authenticity_token: $("#new_review > input[name='authenticity_token']").attr("value")
         }
   });
   request.done(function (response) {
-    highlightStars(parseInt(response.value));
+    highlightFilmStars(parseInt(response.value));
   });
   request.fail(function (error) {
     console.log(error);
@@ -57,7 +57,7 @@ $("#film-rating-4").hover(function() {
   $("#film-rating-4").text("☆")
 })
 
-highlightStars = function(value) {
+highlightFilmStars = function(value) {
   $(".film-rating").empty();
   $(".film-rating").append('<span class="star-static" id="film-rating-1">☆</span><span class="star-static" id="film-rating-2">☆</span><span class="star-static" id="film-rating-3">☆</span><span class="star-static" id="film-rating-4">☆</span>')
 
