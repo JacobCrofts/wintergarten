@@ -14,7 +14,7 @@
 	<br>
 <% else %>
 	<div class="film-rating">
-		<span class="star" id="film-rating-1">☆</span><span class="star" id="film-rating-2">☆</span><span class="star" id="film-rating-3">☆</span><span class="star" id="film-rating-4">☆</span>
+		<span class="film-star" id="film-rating-1">☆</span><span class="film-star" id="film-rating-2">☆</span><span class="film-star" id="film-rating-3">☆</span><span class="film-star" id="film-rating-4">☆</span>
 	</div>
 	<br>
 <% end %>
@@ -38,22 +38,19 @@
 	 -->
 		<% if session[:user_id] %>
 			<%= render 'reviews/form' %>
-      <%= render 'comments/film_form', film: @film %>
-    <% else %>
-      <p>Want to write a review?
-         <%= link_to 'Sign in', login_path %> or
-         <%= link_to 'Sign up', new_user_path %>!
-      </p>
-    <% end %>
-  </div>
+		<% else %>
+			<p>Want to write a review?
+				 <%= link_to 'Sign in', login_path %> or
+				 <%= link_to 'Sign up', new_user_path %>!
+			</p>
+		<% end %>
+	</div>
 
-  <div class="review-container" style="background-color: #eeeeee;">
-    <h3>Reviews</h3>
-    <%= render @film.reviews %>
-    <% @film.comments.each do |comment|%>
-      <p><%= comment.content %></p>
-    <% end %>
-  </div>
-
+	<div class="review-container" style="background-color: #eeeeee;">
+		<h3>Reviews</h3>
+		<%= render @film.reviews %>
+	  <% @film.comments.each do |comment|%>
+	    <p><%= comment.content %></p>
+	  <% end %>
+	</div>
 </div>
-
