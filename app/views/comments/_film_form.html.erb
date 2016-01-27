@@ -1,5 +1,7 @@
-<h6>Comment on Film</h6>
+<h6 class="page-header">Comment on Film</h6>
+<div class="teal-text">
 <%=form_for [film, @comment || Comment.new] do |f| %>
   <%= f.text_area :content %>
   <%= f.submit "Create" %>
 <% end %>
+</div>

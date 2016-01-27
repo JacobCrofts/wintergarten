@@ -1,4 +1,4 @@
-<h1 class="movie-title"><%= @film.title %>
+<h1 class="page-header"><%= @film.title %>
 		<span style="font-size: 0.5em;">(<%= @film.average_rating %> stars, <%= @film.ratings.count %> ratings)</span>
 </h1>
 
@@ -19,19 +19,19 @@
 	<br>
 <% end %>
 
-<div class="film-data">
+<div class="description film-data">
 	<p>Directed by <%= @film.director %>, <%= @film.year %>. <%= @film.runtime %></></p>
 	<p>Synopsis: <%= @film.description %></p>
 </div>
 
 <div class="reviews-container" style="border: 2px solid #eeeeee;">
-	<h2>Summary</h2>
+	<h2 class="page-header form-label">Summary</h2>
 	<div class="review-summary">
 	<!--
 	====== Display film average rating and review count ================
 	 -->
-		  <p classname="rating"><%= @film.average_rating %></p>
-			<p><%= @film.reviews.count %> reviews</p>
+		  <p class="description">Average Rating: <%= @film.average_rating %></p>
+			<p class="description">Number of Reviews: <%= @film.reviews.count %> reviews</p>
 	<!--
 	====== Display review form if user is signed in ====================
 	====== Else, invite user to sign in or sign up to do so ============
@@ -42,21 +42,21 @@
       <%= render 'comments/film_form', film: @film %>
     <% else %>
 
-      <p>Want to write a review?
+      <p class="description">Want to write a review?
          <%= link_to 'Sign in', login_path %> or
          <%= link_to 'Sign up', new_user_path %>!
       </p>
     <% end %>
   </div>
 
-  <div class="review-container" style="background-color: #eeeeee;">
-    <h3>Reviews</h3>
+  <div class="review-container">
+    <h3 class="page-header">Reviews</h3>
     <%= render @film.reviews %>
 
 <!-- Comments on the Movie -->
-    <h3>Comments on the Movie</h3>
+    <h3 class="page-header">Comments on the Movie</h3>
     <% @film.comments.each do |comment|%>
-      <p><%= comment.content %></p>
+      <p class="description"><%= comment.content %></p>
       <%  if session[:user_id] == comment.commenter_id %>
       <button><%= link_to "Delete Comment", method: :delete, data: {confirm: "Are you sure you want to delete this comment?"} %></button>
       <% end %>
@@ -64,12 +64,4 @@
 
   </div>
 
-</div>
-	<div class="review-container" style="background-color: #eeeeee;">
-		<h3>Reviews</h3>
-		<%= render @film.reviews %>
-	  <% @film.comments.each do |comment|%>
-	    <p><%= comment.content %></p>
-	  <% end %>
-	</div>
 </div>

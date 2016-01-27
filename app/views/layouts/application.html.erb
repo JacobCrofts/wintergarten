@@ -50,23 +50,23 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                      <%= link_to 'Home', root_path %>
+                      <span class="nav-link"><%= link_to 'Home', root_path %></span>
                     </li>
                     <li class="page-scroll">
-                      <%= link_to 'Profile', user_path(session[:user_id]) %>
+                      <span class="nav-link"><%= link_to 'Profile', user_path(session[:user_id]) %></span>
                     </li>
                     <li class="page-scroll">
-                      <%= link_to 'Logout', logout_path, method: :get %>
+                      <span class="nav-link"><%= link_to 'Logout', logout_path, method: :get %></span>
                     </li>
                   <% else %>
                     <li class="page-scroll">
-                      <%= link_to 'Home', root_path %>
+                      <span class="nav-link"><%= link_to 'Home', root_path %></span>
                     </li>
                     <li class="page-scroll">
-                      <%= link_to 'Login', login_path %>
+                      <span class="nav-link"><%= link_to 'Login', login_path %></span>
                     </li>
                     <li class="page-scroll">
-                      <%= link_to 'Register', new_user_path %>
+                      <span class="nav-link"><%= link_to 'Register', new_user_path %></span>
                     </li>
                   <% end %>
                 </ul>

@@ -18,6 +18,7 @@ footer {
 
 html {
   background-color: #fff7e5;
+  opacity: 0.6;
 }
 
 body {
@@ -32,6 +33,10 @@ nav {
     margin: auto;
     height: 400px;
     width: 300px;
+}
+
+.teal-text {
+ color: #009999;
 }
 
 .page-scroll {
@@ -56,6 +61,19 @@ nav {
    position: absolute;
 }*/
 
+.navbar-custom a {
+  color: #009999;
+}
+
+.white-text a {
+  color: white;
+  font-size: 14px;
+}
+
+.white-text a:hover {
+  color: #542733;
+}
+
 .film-data {
   margin-top: 20px;
 }
@@ -64,8 +82,95 @@ nav {
   background-color: black;
 }
 
-.review-list {
-  margin: top 25%;
+#review-list {
+  display: inline-block;
+  margin-top: 10%;
   vertical-align: center;
   text-align: center;
+  border-radius: 10px;
+  padding: auto;
+}
+
+#welcome-block {
+  display: inline-block;
+  margin-top: 10%;
+  vertical-align: center;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#films-block {
+  display: inline-block;
+  margin-top: 10%;
+  vertical-align: center;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.movie-title {
+  color: #009999;
+}
+
+.sub-header {
+  font-size: 0.5em;
+}
+
+.form-label {
+ color: #009999;
+}
+
+.description {
+  color: #ff9900;
+}
+
+.small-uppercase {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+input {
+  color: #009999;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.card-panel {
+  display: inline-block;
+  background-color: #ff9900;
+  height: 282px;
+  width: 212px;
+}
+
+.red {
+  background-color: #542733;
+}
+
+p {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+a {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+.link {
+  font-size: 2em;
+}
+
+.page-header {
+  font-size: 2em;
+  margin-top: 10%;
+  color: #542733;
 }
