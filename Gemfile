@@ -42,6 +42,8 @@ group :development, :test do
   gem 'capybara'
   gem 'pry'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.0'
+   gem 'jasmine'
 end
 
 group :development do
