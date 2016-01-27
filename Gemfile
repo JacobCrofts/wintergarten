@@ -43,7 +43,7 @@ group :development, :test do
   gem 'pry'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', '~> 3.0'
-   gem 'jasmine'
+  gem 'jasmine'
 end
 
 group :development do
