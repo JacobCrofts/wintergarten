@@ -28,5 +28,7 @@
     <p><%= comment.commenter.username %></p>
   <% end %>
   <h3>Leave a comment on this review</h3>
-  <%= render 'comments/review_form', film: review.film, review: review %>
+  <% if session[:user_id] %>
+    <%= render 'comments/review_form', film: review.film, review: review %>
+  <% end %>
 <% end %>
