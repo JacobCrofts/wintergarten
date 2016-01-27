@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
       @comment.update(comment_params)
       redirect_to film_path(film)
     else
-      render 'edit'
+      render 'comments/edit_film'
     end
   end
 
