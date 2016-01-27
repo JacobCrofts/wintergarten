@@ -38,14 +38,32 @@
 	 -->
 		<% if session[:user_id] %>
 			<%= render 'reviews/form' %>
-		<% else %>
-			<p>Want to write a review?
-				 <%= link_to 'Sign in', login_path %> or
-				 <%= link_to 'Sign up', new_user_path %>!
-			</p>
-		<% end %>
-	</div>
+      <!-- Comment on the film -->
+      <%= render 'comments/film_form', film: @film %>
+    <% else %>
 
+      <p>Want to write a review?
+         <%= link_to 'Sign in', login_path %> or
+         <%= link_to 'Sign up', new_user_path %>!
+      </p>
+    <% end %>
+  </div>
+
+  <div class="review-container" style="background-color: #eeeeee;">
+    <h3>Reviews</h3>
+    <%= render @film.reviews %>
+
+    <!-- Need to display the form to add comment on review -->
+    <!-- edit and delete comment on review-->
+
+<!-- Comments on the Movie -->
+    <h3>Comments on the Movie</h3>
+    <% @film.comments.each do |comment|%>
+      <p><%= comment.content %></p>
+    <% end %>
+  </div>
+
+</div>
 	<div class="review-container" style="background-color: #eeeeee;">
 		<h3>Reviews</h3>
 		<%= render @film.reviews %>
