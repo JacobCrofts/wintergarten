@@ -1,6 +1,24 @@
 <% if review.id %>
 	<div class="review" style="border: 1px solid #444;">
 		<p><%= review.title %></p>
+
+    <% if session[:user_id] && review.already_rated(session[:user_id]) %>
+      <div class="rated-review">
+        <% review.current_user_rating(session[:user_id]).times do %>
+          <span class="star-static">★</span>
+        <% end %>
+        <% (4 - review.current_user_rating(session[:user_id])).times do %>
+          <span class="star-static">☆</span>
+        <% end %>
+      </div>
+      <br>
+    <% elsif session[:user_id] %>
+      <div id="review-stars-<%=review.id%>" class="review-rating">
+        <span class="review-rating-1">☆</span><span class="review-rating-2">☆</span><span class="review-rating-3">☆</span><span class="review-rating-4">☆</span>
+      </div>
+      <br>
+    <% end %>
+
 		<p><%= review.average_rating %></p>
 		<p><%= review.content %></p>
 		<p> - <%= review.reviewer.username %> on <%= review.created_at.strftime('%d %b. %Y') %></p>
@@ -12,5 +30,8 @@
     <p><%= comment.commenter.username %></p>
   <% end %>
   <h3>Leave a comment on this review</h3>
-  <%= render 'comments/review_form', film: review.film, review: review %>
+
+  <% if session[:user_id] %>
+    <%= render 'comments/review_form', film: review.film, review: review %>
   <% end %>
+<% end %>
