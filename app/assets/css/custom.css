@@ -25,3 +25,25 @@ html {
 .page-scroll {
   margin-top: 0;
 }
+
+.rating {
+  margin-top: -20px;
+  float: left;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+/*.rating > span {
+  display: block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}*/
+
+.film-data {
+  margin-top: 20px;
+}

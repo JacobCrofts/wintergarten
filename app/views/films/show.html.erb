@@ -1,13 +1,15 @@
-<h1><%= @film.title %>
-		<span style="font-size: 0.5em;">(<%= @film.average_rating %> / 4 reels and
-		<%= @film.reviews.count %> reviews)</span>
+<h1 class="movie-title"><%= @film.title %>
+		<span style="font-size: 0.5em;">(<%= @film.average_rating %> stars, <%= @film.reviews.count %> reviews)</span>
 </h1>
 
+<div class="film-rating">
+	<span class="star" id="film-rating-1">☆</span><span class="star" id="film-rating-2">☆</span><span class="star" id="film-rating-3">☆</span><span class="star" id="film-rating-4">☆</span>
+</div>
+<br>
+
 <div class="film-data">
-	<p><strong>Year: </strong><%= @film.year %></p>
-	<p><strong>Directed by:</strong> <%= @film.director %></p>
-	<p><strong>Runtime:</strong> <%= @film.runtime %></p>
-	<p><strong>Description:</strong> <%= @film.description %></p>
+	<p>Directed by <%= @film.director %>, <%= @film.year %>. <%= @film.runtime %></></p>
+	<p>Synopsis: <%= @film.description %></p>
 </div>
 
 <div class="reviews-container" style="border: 2px solid #eeeeee;">

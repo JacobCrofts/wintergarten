@@ -26,5 +26,21 @@ class Film < ActiveRecord::Base
     end
   end
 
+  def rounded_stars
+    stars = (self.average_rating * 2).to_i / 2.0
+    case stars
+    when 1.0
+    when 1.5
+    when 2.0
+    when 2.5
+    when 3.0
+    when 3.5
+    when 4.0
+    end
+  end
+
+  def self.top_five
+    self.all.to_a.sort_by {|film| film.average_rating}.reverse[0..4]
+  end
 
 end
