@@ -1,1 +1,9 @@
 <h1>Profile Page</h1>
+
+<ul class="review-list">
+  <% if @user.reviews.length > 0 && @user.id == session[:user_id] %>
+    <% @user.reviews.each do |review| %>
+      <li class="list-group-item"><%= link_to review.title, film_path(review.film) %></li>
+    <% end %>
+  <% end %>
+</ul>
